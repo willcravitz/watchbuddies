@@ -1,0 +1,12 @@
+{% extends "wb/media_detail.html" %}
+
+{% block type_content %}
+    <h4>{{ object.series.title }}</h4>
+    <p>Season {{ object.season }}, Episode {{ object.episode_number }}</p>
+{% endblock type_content %}
+
+{% block crud_links %}
+    <a href="{% url 'episode-edit' series_pk=object.series.pk pk=object.pk %}">Edit</a>
+    <a href="{% url 'episode-delete' series_pk=object.series.pk pk=object.pk %}">Delete</a>
+{% endblock crud_links %}
+

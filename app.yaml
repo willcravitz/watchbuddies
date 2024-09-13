@@ -1,0 +1,14 @@
+runtime: python39
+env: standard
+entrypoint: gunicorn -b :$PORT cs220hw.wsgi:application
+
+env_variables:
+    DJANGO_SETTINGS_MODULE: cs220hw.settings.production
+    PYTHONPATH: "${PYTHONPATH}:/workspace/src"
+
+handlers:
+- url: /.*
+  script: auto
+
+runtime_config:
+  python_version: 3

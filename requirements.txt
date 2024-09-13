@@ -1,0 +1,17 @@
+black==23.9.1
+coverage==7.3.1
+Django==4.2.5
+django-stubs==4.2.4
+flake8==6.1.0
+ipython==8.15.0
+mypy==1.5.1
+pytest==7.4.2
+pytest-django==4.6.0
+django-tables2==2.6.0
+djangorestframework==3.14.0
+faker==19.12.0
+factory_boy==3.3.0
+psycopg2-binary==2.9.9
+django-environ==0.11.2
+google-cloud-secret-manager==2.16.4
+gunicorn==21.2.0

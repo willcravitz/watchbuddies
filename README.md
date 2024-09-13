@@ -1,2 +1,3 @@
-# watchbuddies
-A simple Django crud app I wrote for a class
+# Watch Buddies
+
+A simple Django CRUD app that I wrote for class and deployed on Google Cloud.

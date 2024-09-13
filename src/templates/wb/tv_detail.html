@@ -1,0 +1,13 @@
+{% extends "wb/media_detail.html" %}
+{% load render_table from django_tables2 %}
+
+{% block type_content %}
+    <h4>Episodes</h4>
+    {% render_table table %}
+{% endblock type_content %}
+
+{% block crud_links %}
+    <a href="{% url 'episode-create' series_pk=object.pk %}">Create New Episode</a>
+    <a href="{% url 'tv-edit' object.pk %}">Edit</a>
+    <a href="{% url 'tv-delete' object.pk %}">Delete</a>
+{% endblock crud_links %}

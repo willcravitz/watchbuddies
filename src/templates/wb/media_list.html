@@ -1,0 +1,14 @@
+{% extends "wb/base.html" %}
+{% load render_table from django_tables2 %}
+
+{% block title %}
+    {{ media_type }}
+{% endblock title %}
+
+{% block content %}
+    <h4>{{ media_type }}</h4>
+    {% render_table table %}
+    {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url create_url %}">Create New {{ media_type }}</a>
+    {% endif %}
+{% endblock content %}

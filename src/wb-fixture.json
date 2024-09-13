@@ -1,0 +1,242 @@
+[
+{
+    "model": "wb.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$JdPc2wTkTsaIWnns2CJbiu$e108GJ9iIJOKxzCzRFyyroudc7U7g3LVKeqYs1+X108=",
+        "is_superuser": true,
+        "username": "admin",
+        "email": "admin@example.com",
+        "is_staff": true
+    }
+},
+{
+    "model": "wb.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$qtJT9UfrM7EDTUwLOzGJMy$X5Ic2g+MkLv8jjxDCzJhv7GvT6wT833XIM7yInvnN70=",
+        "is_superuser": false,
+        "username": "user1",
+        "email": "user1@example.com",
+        "is_staff": false
+    }
+},
+{
+    "model": "wb.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$CUPrOE3mhi4oeVWFS1d0gW$KT6FKZyr0KsddIX0zVlpq8QztYtwcIomkE3BzIIvznk=",
+        "is_superuser": false,
+        "username": "user2",
+        "email": "user2@example.com",
+        "is_staff": false
+    }
+},
+{
+    "model": "wb.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$ud7rpM37F8ZbTqxrPEq4I4$CDxd54SsnO5zBUwYSSs7hP6U2Eg/RO1vIZcJV7VW5ng=",
+        "is_superuser": false,
+        "username": "user3",
+        "email": "user3@example.com",
+        "is_staff": false
+    }
+},
+{
+    "model": "wb.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$S72jiazVHvl5IwhjDYMiC0$YQ2MLrvmDNuP1kiVxB4buSHGNoY6sGyROF8VsWckXAc=",
+        "is_superuser": false,
+        "username": "user4",
+        "email": "user4@example.com",
+        "is_staff": false
+    }
+},
+{
+    "model": "wb.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$EemmANp7Mmwq3AWfcF54ol$f2nFd7XnQ2k1BWldxWyueHYP8hKthtnMmKwIquElr44=",
+        "is_superuser": false,
+        "username": "user5",
+        "email": "user5@example.com",
+        "is_staff": true
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 1,
+    "fields": {
+        "media_type": 1,
+        "title": "Movie 1",
+        "cover_image": "movie1.jpg",
+        "release_date": "2023-01-01"
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 2,
+    "fields": {
+        "media_type": 1,
+        "title": "Movie 2",
+        "cover_image": "movie2.jpg",
+        "release_date": "2023-02-01"
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 3,
+    "fields": {
+        "media_type": 1,
+        "title": "Movie 3",
+        "cover_image": "movie3.jpg",
+        "release_date": "2023-03-01"
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 4,
+    "fields": {
+        "media_type": 1,
+        "title": "Movie 4",
+        "cover_image": "movie4.jpg",
+        "release_date": "2023-04-01"
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 5,
+    "fields": {
+        "media_type": 2,
+        "title": "TV Series 1",
+        "cover_image": "tv_series1.jpg",
+        "release_date": "2023-05-01"
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 6,
+    "fields": {
+        "media_type": 2,
+        "title": "TV Series 2",
+        "cover_image": "tv_series2.jpg",
+        "release_date": "2023-06-01"
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 7,
+    "fields": {
+        "media_type": 3,
+        "title": "Episode 1",
+        "cover_image": "episode1.jpg",
+        "release_date": "2023-05-01",
+        "season": 1,
+        "episode_number": 1,
+        "series": 5
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 8,
+    "fields": {
+        "media_type": 3,
+        "title": "Episode 2",
+        "cover_image": "episode2.jpg",
+        "release_date": "2023-05-08",
+        "season": 1,
+        "episode_number": 2,
+        "series": 5
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 9,
+    "fields": {
+        "media_type": 3,
+        "title": "Episode 3",
+        "cover_image": "episode3.jpg",
+        "release_date": "2023-05-15",
+        "season": 1,
+        "episode_number": 3,
+        "series": 5
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 10,
+    "fields": {
+        "media_type": 3,
+        "title": "Episode 1",
+        "cover_image": "episode1.jpg",
+        "release_date": "2023-06-01",
+        "season": 1,
+        "episode_number": 1,
+        "series": 6
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 11,
+    "fields": {
+        "media_type": 3,
+        "title": "Episode 2",
+        "cover_image": "episode2.jpg",
+        "release_date": "2023-06-08",
+        "season": 1,
+        "episode_number": 2,
+        "series": 6
+    }
+},
+{
+    "model": "wb.media",
+    "pk": 12,
+    "fields": {
+        "media_type": 3,
+        "title": "Episode 3",
+        "cover_image": "episode3.jpg",
+        "release_date": "2023-06-15",
+        "season": 1,
+        "episode_number": 3,
+        "series": 6
+    }
+},
+{
+    "model": "wb.watchedlist",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "media": 1,
+        "rating": 4
+    }
+},
+{
+    "model": "wb.watchedlist",
+    "pk": 2,
+    "fields": {
+        "user": 3,
+        "media": 1,
+        "rating": 3
+    }
+},
+{
+    "model": "wb.watchedlist",
+    "pk": 3,
+    "fields": {
+        "user": 2,
+        "media": 2,
+        "rating": 5
+    }
+},
+{
+    "model": "wb.watchedlist",
+    "pk": 4,
+    "fields": {
+        "user": 3,
+        "media": 2,
+        "rating": 4
+    }
+}
+]

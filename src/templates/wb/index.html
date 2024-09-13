@@ -1,0 +1,9 @@
+{% extends "wb/base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <p>Welcome {{ request.user.username }}!</p>  
+{% else %}
+    <p>Welcome to WatchBuddies!</p>
+{% endif %}
+{% endblock content %}

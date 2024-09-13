@@ -1,0 +1,71 @@
+{% extends "wb/media_detail.html" %}
+{% load render_table from django_tables2 %}
+
+{% block type_content %}
+    {% comment %} <h4>Ratings</h4>
+    {% render_table table %} {% endcomment %}
+    <p id="avgRating">Average rating: {{ object.avg_rating }}</p>
+
+    {% if user.is_authenticated %}
+    <form id='movieRatingForm'>
+        {% csrf_token %}
+        <label for='rating'>Select a Rating:</label>
+        <select name='rating' id='ratingSelect'>
+            <option value="" disabled selected></option>
+        </select>
+        <br>
+        <input type='submit' value='Rate'>
+    </form>
+
+    <script>
+        const ratingSelect = document.getElementById('ratingSelect');
+        for (let rating = 0.5; rating <= 5.0; rating += 0.5) {
+            const option = document.createElement('option');
+            option.value = rating;
+            option.textContent = rating;
+            ratingSelect.appendChild(option);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const movieRatingForm = document.getElementById('movieRatingForm');
+            movieRatingForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const postData = {
+                    user: `{{ request.user.username }}`,
+                    rating: ratingSelect.value,
+                };
+                const moviePk = {{ object.pk }}
+                const ratingUrl = `/api/movies/${moviePk}/ratings`;
+                try {
+                    const response = await fetch(ratingUrl, {
+                        method: 'POST',
+                        body: JSON.stringify(postData),
+                        headers: {
+                            'Content-type': 'application/json; charset=UTF-8',
+                            'X-CSRFToken': getCookie('csrftoken'),
+                        },
+                    });
+                    const data = await response.json();
+                    try {
+                        const movieUrl = `/api/movies/${moviePk}`;
+                        const response = await fetch(movieUrl);
+                        const movie = await response.json();
+                        const avgRating = document.getElementById('avgRating');
+                        avgRating.textContent = `Average rating: ${movie.avg_rating}`;
+                    }
+                    catch (error) {
+                        console.error('There was an error getting the ratings:', error);
+                    }
+                } catch (error) {
+                    console.error('There was an error posting this rating:', error);
+                }
+            });
+        });
+    </script>
+    {% endif %}
+{% endblock type_content %}
+
+{% block crud_links %}
+    <a href="{% url 'movie-edit' object.pk %}">Edit</a>
+    <a href="{% url 'movie-delete' object.pk %}">Delete</a>
+{% endblock crud_links %}

@@ -1,0 +1,14 @@
+{% extends "wb/base.html" %}
+
+{% block title %}
+    {{ object.title }}
+{% endblock title %}
+
+{% block content %}
+    <p>Are you sure you want to delete {{ object.title }} from {{ object.series.title }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'episode-detail' pk=object.pk series_pk=object.series.pk %}">No, Cancel</a>
+    </form>
+{% endblock content %}

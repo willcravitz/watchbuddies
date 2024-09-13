@@ -1,0 +1,17 @@
+{% extends "wb/base.html" %}
+
+{% block title %}
+    {{ object.title }}
+{% endblock title %}
+
+{% block content %}
+    <h2>{{ object.title }}</h2>
+    <p>{{ object.release_date|date:"F j, Y" }}</p>
+    {% block type_content %}
+    {% endblock type_content %}
+
+    {% if user.is_authenticated and user.is_staff %}
+        {% block crud_links %}
+        {% endblock crud_links %}
+    {% endif %}
+{% endblock content %}
